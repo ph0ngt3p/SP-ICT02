@@ -1,7 +1,6 @@
 'use strict'
 
 const mongoose = require('mongoose')
-const _ = require('lodash')
 
 const wearSchema = new mongoose.Schema({
   name: String,
@@ -12,17 +11,19 @@ const wearSchema = new mongoose.Schema({
   image: String
 })
 
-async function getAllItems (page) {
-  const items = await this.find()
+async function getAllItemsByPage (page) {
+  return this.find()
+    .skip(page * 5)
+    .limit(5)
     .select('name')
     .select('price')
     .select('image')
     .lean()
     .exec()
-  return {
-    items: _.chunk(items, 5)[page],
-    count: items.length
-  }
+}
+
+async function getTotalNumberOfItems () {
+  return this.find().count().exec()
 }
 
 async function getItemDetails (id) {
@@ -30,8 +31,9 @@ async function getItemDetails (id) {
 }
 
 wearSchema.static({
-  getAllItems,
-  getItemDetails
+  getAllItemsByPage,
+  getItemDetails,
+  getTotalNumberOfItems
 })
 
 module.exports = wearSchema
