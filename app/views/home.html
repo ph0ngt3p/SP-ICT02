@@ -8,16 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
 
     <title>XYZ Wear</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/static/css/shop-homepage.css" rel="stylesheet">
+    <link href="css/shop-homepage.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,6 +44,7 @@
 
     <div class="row">
 
+
         <div class="col-md-10">
 
             <div class="row">
@@ -60,6 +59,50 @@
                     </div>
             {% endfor %}
             </div>
+
+            <!-- Pagination -->
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <ul class="pagination">
+                        <!-- Show page numbers for pagination -->
+                        {% if useRangeBasedPagination == false %}
+
+                            {% for i in range(pages) %}
+                                {% if page == i %}
+                                    <li class="active">
+                                {% else %}
+                                    <li class="inactive">
+                                {% endif %}
+                                    <a href="/?page={{i}}">{{i + 1}}</a>
+                                </li>
+                            {% endfor %}
+
+                        {% endif %}
+
+                        <!-- TODO-lab3 Range based Pagination, modify the useRangeBasedPagination attribute in the controller  -->
+
+                        {% if useRangeBasedPagination %}
+
+                            <#if previousPageUrl??>
+                                <li><a href="${previousPageUrl}">Previous Page</a></li>
+                            </#if>
+                            <#if nextPageUrl??>
+                                <li><a href="${nextPageUrl}">Next Page</a></li>
+                            </#if>
+
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+
+            {% if useRangeBasedPagination == false %}
+
+                <div style="text-align:center;">
+                    <i>{{itemCount}} Products</i>
+                </div>
+
+            {% endif %}
 
             <!-- /.row -->
         </div>

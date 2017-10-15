@@ -4,14 +4,14 @@ const compose = require('koa-compose')
 const models = require('../models')
 
 async function home (ctx) {
-  const items = await models.Wears.find()
-                                  .select('name')
-                                  .select('price')
-                                  .select('image')
-                                  .lean()
-                                  .exec()
+  const page = ctx.query.page ? parseInt(ctx.query.page, 10) : 0
+  const { items, count } = await models.Wears.getAllItems(page)
   return ctx.render('home', {
-    items
+    items,
+    useRangeBasedPagination: false,
+    itemCount: count,
+    page,
+    pages: count > 5 ? Math.ceil(count / 5) : 0
   })
 }
 
