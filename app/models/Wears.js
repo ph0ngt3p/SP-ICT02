@@ -3,12 +3,12 @@
 const mongoose = require('mongoose')
 
 const wearSchema = new mongoose.Schema({
-  name: String,
-  color: String,
-  size: String,
-  quantity: Number,
-  detail: String,
-  image: String
+  name: { type: String, required: true },
+  color: { type: String, required: true },
+  size: { type: String, required: true },
+  quantity: { type: Number, required: true },
+  detail: { type: String, required: true },
+  image: { type: String, required: true }
 })
 
 async function getAllItemsByPage (page) {
