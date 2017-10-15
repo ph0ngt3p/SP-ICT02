@@ -5,7 +5,16 @@
  */
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 70px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.breadcrumb * {
+    color: blue;
+}
+
+.small {
+    font-style: italic;
 }
 
 .slide-image {
@@ -51,4 +60,8 @@ body {
 
 footer {
     margin: 50px 0;
+}
+
+.well {
+    margin-top: 40px;
 }
