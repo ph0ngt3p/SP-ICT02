@@ -39,31 +39,12 @@
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <li class="active">{{category_param}}</li>
             </ol>
         </div>
     </div>
     <!-- /.row -->
 
     <div class="row">
-
-        <div class="col-md-2">
-            <div class="list-group">
-                {% for category in categories %}
-                <a href="/?category={{category._id}}"
-                   {% if category_param == category._id %}
-                   class="list-group-item active">
-                  {% else %}
-                   class="list-group-item inactive">
-                  {% endif %}
-                  <span class="badge">
-                    {{category.num}}
-                  </span>
-                  {{category._id}}
-                </a>
-                {% endfor %}
-            </div>
-        </div>
 
         <div class="col-md-10">
 
@@ -72,57 +53,13 @@
 
                     <div class="col-sm-6" style="margin: 15px 0">
                         <a href="/item/{{item._id}}">
-                            <img class="img-responsive" src="/static/{{item.img_url}}" alt="">
+                            <img class="img-responsive" src="{{item.image}}" alt="">
                         </a>
-                        <h3 class="title-product"><a href="/item/{{item._id}}">{{item.title}}</a></h3>
+                        <h3 class="title-product"><a href="/item/{{item._id}}">{{item.name}}</a></h3>
                         <p class="mPrice"><strong>{{item.price}}</strong></p>
                     </div>
             {% endfor %}
             </div>
-
-            <!-- Pagination -->
-            <div class="row text-center">
-                <div class="col-lg-12">
-                    <ul class="pagination">
-                        <!-- Show page numbers for pagination -->
-                        {% if useRangeBasedPagination == false %}
-
-                            {% for i in range(pages) %}
-                                {% if page == i %}
-                                    <li class="active">
-                                {% else %}
-                                    <li class="inactive">
-                                {% endif %}
-                                    <a href="/?page={{i}}&category={{category_param}}">{{i + 1}}</a>
-                                </li>
-                            {% endfor %}
-
-                        {% endif %}
-
-                        <!-- TODO-lab3 Range based Pagination, modify the useRangeBasedPagination attribute in the controller  -->
-
-                        {% if useRangeBasedPagination %}
-
-                            <#if previousPageUrl??>
-                                <li><a href="${previousPageUrl}">Previous Page</a></li>
-                            </#if>
-                            <#if nextPageUrl??>
-                                <li><a href="${nextPageUrl}">Next Page</a></li>
-                            </#if>
-
-                        {% endif %}
-
-                    </ul>
-                </div>
-            </div>
-
-            {% if useRangeBasedPagination == false %}
-
-                <div style="text-align:center;">
-                    <i>{{itemCount}} Products</i>
-                </div>
-
-            {% endif %}
 
             <!-- /.row -->
         </div>

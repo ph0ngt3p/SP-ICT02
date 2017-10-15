@@ -3,6 +3,7 @@
 'use strict'
 
 const logger = require('winston')
+const nunjucks = require('nunjucks')
 const semver = require('semver')
 const pkg = require('./package.json')
 
@@ -27,3 +28,5 @@ if (!valid) {
 }
 
 require('./app')
+
+nunjucks.configure('app/views')

@@ -1,10 +1,10 @@
 'use strict'
 
 const Router = require('koa-router')
-const indexPage = require('./indexPage')
+const home = require('./homeController')
 
 const routes = new Router()
 
-routes.get('/', indexPage)
+routes.get('/', home)
 
 module.exports = routes

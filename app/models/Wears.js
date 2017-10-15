@@ -3,7 +3,6 @@
 const mongoose = require('mongoose')
 
 const wearSchema = new mongoose.Schema({
-  id: String,
   name: String,
   color: String,
   size: String,
