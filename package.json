@@ -43,7 +43,11 @@
     "super-request": "1.2.0"
   },
   "scripts": {
-    "start": "nodemon ."
+    "start": "nodemon .",
+    "lint": "eslint ."
   },
+  "pre-commit": [
+    "lint"
+  ],
   "license": "MIT"
 }
