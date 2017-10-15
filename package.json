@@ -17,7 +17,6 @@
   "dependencies": {
     "boom": "^6.0.0",
     "dotenv": "^4.0.0",
-    "ect": "^0.5.9",
     "joi": "^13.0.0",
     "kcors": "^2.2.1",
     "koa": "2.2.0",
@@ -27,6 +26,7 @@
     "koa-static": "^3.0.0",
     "koa-views": "^6.0.2",
     "mongoose": "^4.12.2",
+    "nunjucks": "^3.0.1",
     "semver": "^5.4.1",
     "winston": "^2.4.0"
   },

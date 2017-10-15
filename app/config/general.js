@@ -8,7 +8,7 @@ module.exports = {
   template: {
     path: 'app/views',
     options: {
-      map: { html: 'ect' }
+      map: { html: 'nunjucks' }
     }
   },
   staticDir: {
