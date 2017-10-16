@@ -6,6 +6,7 @@ const cors = require('kcors')
 const serve = require('koa-static')
 const views = require('koa-views')
 const session = require('koa-session')
+const nunjucks = require('nunjucks')
 const controllers = require('./controllers')
 const config = require('./config')
 
@@ -32,5 +33,9 @@ app.use(controllers.allowedMethods({
   methodNotAllowed: () => new Boom.methodNotAllowed() // eslint-disable-line new-cap
 }))
 app.use(cors())
+
+nunjucks.configure(config.template.path, {
+  autoescape: true
+})
 
 module.exports = app
