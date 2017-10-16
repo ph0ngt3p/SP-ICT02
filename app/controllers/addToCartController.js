@@ -9,7 +9,7 @@ async function addToCart (ctx) {
   const item = await models.Wears.getItemDetails(id)
   cart.addToCart(item, id)
   ctx.session.cart = cart
-  return ctx.redirect('/')
+  return ctx.redirect('/cart')
 }
 
 module.exports = compose([
