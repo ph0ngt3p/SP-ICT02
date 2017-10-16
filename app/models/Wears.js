@@ -13,8 +13,8 @@ const wearSchema = new mongoose.Schema({
 
 async function getAllItemsByPage (page) {
   return this.find()
-    .skip(page * 5)
-    .limit(5)
+    .skip(page * 8)
+    .limit(8)
     .select('name')
     .select('price')
     .select('image')
@@ -30,10 +30,16 @@ async function getItemDetails (id) {
   return this.findOne({ _id: id }).exec()
 }
 
+async function getSearchItem (name) {
+  const upperCaseName = name.toUpperCase()
+  return this.find({ name: new RegExp(`^${upperCaseName}.+`, 'i') }).lean().exec()
+}
+
 wearSchema.static({
   getAllItemsByPage,
   getItemDetails,
-  getTotalNumberOfItems
+  getTotalNumberOfItems,
+  getSearchItem
 })
 
 module.exports = wearSchema

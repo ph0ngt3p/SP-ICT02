@@ -53,9 +53,9 @@
             <table class="table table-bordered">
                 <thead class="thead-default">
                     <tr>
-												<th />
-												<th>Product</th>
-												<th>Unit Price</th>
+                        <th />
+                        <th>Product</th>
+                        <th>Unit Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
                     </tr>
@@ -65,28 +65,28 @@
                 {% for item in cart.items %}
                 <tr>
                   <form
-                     action="/user/{{userId}}/cart/items/{{item._id}}/quantity"
-										 method="post">
-										 	<td class="muted center_text col-md-1"><a href="/item/{{item._id}}"><img width="300" src="/static/{{item.img_url}}"></a></td>
-											<td class="col-md-6"><a href="/item/{{item._id}}">{{item.title}}</a></td>
-											<td class="col-md-2">
-													{{item.price|round(2,"floor")}}
-											</td>
-											<td class="col-md-2">
-													<select name="quantity" onchange="this.form.submit()">
-															<option value="0">0 (Remove)</option>
-															{% for i in range(1,26) %}
-																	{% if item.quantity == i %}
-																			<option value="{{i}}" selected>{{i}}</option>
-																	{% else %}
-																			<option value="{{i}}">{{i}}</option>
-																	{% endif %}
-															{% endfor %}
-													</select>
-											</td>
-											<td class="col-md-1">
-													{{(item.price * item.quantity)|round(2,"floor")}}
-											</td>
+                    action="/user/{{userId}}/cart/items/{{item._id}}/quantity"
+                    method="post">
+                    <td class="muted center_text col-md-1"><a href="/item/{{item._id}}"><img width="300" src="/static/{{item.img_url}}"></a></td>
+                    <td class="col-md-6"><a href="/item/{{item._id}}">{{item.title}}</a></td>
+                    <td class="col-md-2">
+                            {{item.price|round(2,"floor")}}
+                    </td>
+                    <td class="col-md-2">
+                            <select name="quantity" onchange="this.form.submit()">
+                                    <option value="0">0 (Remove)</option>
+                                    {% for i in range(1,26) %}
+                                            {% if item.quantity == i %}
+                                                    <option value="{{i}}" selected>{{i}}</option>
+                                            {% else %}
+                                                    <option value="{{i}}">{{i}}</option>
+                                            {% endif %}
+                                    {% endfor %}
+                            </select>
+                    </td>
+                    <td class="col-md-1">
+                            {{(item.price * item.quantity)|round(2,"floor")}}
+                    </td>
                     </form>
                 </tr>
                 {% endfor %}
