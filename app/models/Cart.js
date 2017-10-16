@@ -1,14 +1,16 @@
 'use strict'
 
 module.exports = class Cart {
-  constructor () {
-    this.items = []
-    this.totals = 0
+  constructor (oldCart) {
+    this.data = {
+      items: oldCart.data.items || [],
+      totals: oldCart.data.totals || 0
+    }
   }
 
   inCart (productID) {
     let found = false
-    this.items.forEach((item) => {
+    this.data.items.forEach((item) => {
       if (item.id === productID) {
         found = true
       }
@@ -21,21 +23,21 @@ module.exports = class Cart {
       const prod = {
         id: product._id,
         name: product.name,
-        price: product.price,
+        price: parseInt(product.price, 10),
         qty,
         image: product.image
       }
-      this.items.push(prod)
+      this.data.items.push(prod)
       this.calculateTotals()
     } else {
-      const item = this.items.filter((item) => item._id === product._id)
+      const item = this.data.items.filter((item) => item.id === product._id)
       item.qty += 1
     }
   }
 
   calculateTotals () {
-    this.totals = 0
-    this.items.forEach((item) => {
+    this.data.totals = 0
+    this.data.items.forEach((item) => {
       const price = item.price
       const qty = item.qty
       const amount = price * qty
