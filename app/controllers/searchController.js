@@ -5,12 +5,10 @@ const models = require('../models')
 
 async function search (ctx) {
   const searchStr = ctx.query.query
-  const items = await models.Wears.getSearchItem(searchStr)
-  const itemsCount = items.length
   const page = ctx.query.page ? parseInt(ctx.query.page, 10) : 0
-
+  const { items, itemsCount } = await models.Wears.getSearchItem(searchStr, page)
   return ctx.render('search', {
-    items: items.slice(6 * page, 6 * (page + 1)),
+    items,
     queryString: searchStr,
     itemsCount,
     page,

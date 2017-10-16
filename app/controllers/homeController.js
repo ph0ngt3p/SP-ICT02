@@ -5,13 +5,12 @@ const models = require('../models')
 
 async function home (ctx) {
   const page = ctx.query.page ? parseInt(ctx.query.page, 10) : 0
-  const items = await models.Wears.getAllItemsByPage(page)
-  const itemsCount = await models.Wears.getTotalNumberOfItems()
+  const { items, itemsCount } = await models.Wears.getAllItemsByPage(page)
   return ctx.render('home', {
     items,
-    itemCount: itemsCount,
+    itemsCount,
     page,
-    pages: itemsCount > 8 ? Math.ceil(itemsCount / 8) : 0
+    pages: itemsCount > 9 ? Math.ceil(itemsCount / 9) : 0
   })
 }
 

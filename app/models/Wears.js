@@ -13,14 +13,18 @@ const wearSchema = new mongoose.Schema({
 })
 
 async function getAllItemsByPage (page) {
-  return this.find()
-    .skip(page * 8)
-    .limit(8)
-    .select('name')
-    .select('price')
-    .select('image')
-    .lean()
-    .exec()
+  return {
+    items: await this
+                  .find()
+                  .skip(page * 9)
+                  .limit(9)
+                  .select('name')
+                  .select('price')
+                  .select('image')
+                  .lean()
+                  .exec(),
+    itemsCount: await this.getTotalNumberOfItems()
+  }
 }
 
 async function getTotalNumberOfItems () {
@@ -31,9 +35,21 @@ async function getItemDetails (id) {
   return this.findOne({ _id: id }).exec()
 }
 
-async function getSearchItem (name) {
+async function getSearchItem (name, page) {
   const upperCaseName = name.toUpperCase()
-  return this.find({ name: new RegExp(`^${upperCaseName}.+`, 'i') }).lean().exec()
+  const itemsCount = await this.find({ name: new RegExp(`^${upperCaseName}.+`, 'i') }).count().exec()
+  return {
+    items: await this
+                  .find()
+                  .skip(page * 6)
+                  .limit(6)
+                  .select('name')
+                  .select('price')
+                  .select('image')
+                  .lean()
+                  .exec(),
+    itemsCount
+  }
 }
 
 wearSchema.static({
