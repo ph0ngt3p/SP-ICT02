@@ -40,7 +40,7 @@ async function getSearchItem (name, page) {
   const itemsCount = await this.find({ name: new RegExp(`^${upperCaseName}.+`, 'i') }).count().exec()
   return {
     items: await this
-                  .find()
+                  .find({ name: new RegExp(`^${upperCaseName}.+`, 'i') })
                   .skip(page * 6)
                   .limit(6)
                   .select('name')
