@@ -12,7 +12,7 @@ async function home (ctx) {
     useRangeBasedPagination: false,
     itemCount: itemsCount,
     page,
-    pages: itemsCount > 5 ? Math.ceil(itemsCount / 5) : 0
+    pages: itemsCount > 6 ? Math.ceil(itemsCount / 6) : 0
   })
 }
 

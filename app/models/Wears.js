@@ -14,8 +14,8 @@ const wearSchema = new mongoose.Schema({
 
 async function getAllItemsByPage (page) {
   return this.find()
-    .skip(page * 5)
-    .limit(5)
+    .skip(page * 6)
+    .limit(6)
     .select('name')
     .select('price')
     .select('image')
