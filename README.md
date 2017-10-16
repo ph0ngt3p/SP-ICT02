@@ -21,7 +21,10 @@ $ npm i / yarn install
 **Setup:**
 
 - Create a `.env` file with the environment variables specified in `.env.template`
-- Create MongoDB database, create collection `Users`, insert document with a variable `name`
+- Create MongoDB database, go to data directory:
+```sh
+$ mongoimport -d Wears -c Wears items.json --jsonArray 
+```
 - Davai
 
 **Run:**
