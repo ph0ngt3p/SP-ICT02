@@ -62,31 +62,22 @@
                 </thead>
                 <tbody>
 
-                {% for item in cart.items %}
+                {% for item in cart %}
                 <tr>
                   <form
-                    action="/user/{{userId}}/cart/items/{{item._id}}/quantity"
-                    method="post">
-                    <td class="muted center_text col-md-1"><a href="/item/{{item._id}}"><img width="300" src="/static/{{item.img_url}}"></a></td>
-                    <td class="col-md-6"><a href="/item/{{item._id}}">{{item.title}}</a></td>
-                    <td class="col-md-2">
-                            {{item.price|round(2,"floor")}}
-                    </td>
-                    <td class="col-md-2">
-                            <select name="quantity" onchange="this.form.submit()">
-                                    <option value="0">0 (Remove)</option>
-                                    {% for i in range(1,26) %}
-                                            {% if item.quantity == i %}
-                                                    <option value="{{i}}" selected>{{i}}</option>
-                                            {% else %}
-                                                    <option value="{{i}}">{{i}}</option>
-                                            {% endif %}
-                                    {% endfor %}
-                            </select>
-                    </td>
-                    <td class="col-md-1">
-                            {{(item.price * item.quantity)|round(2,"floor")}}
-                    </td>
+                     action=""
+										 method="post">
+										 	<td class="muted center_text col-md-1"><a href="/item/{{item.item._id}}"><img width="300" src="{{item.item.image}}"></a></td>
+											<td class="col-md-6"><a href="/item/{{item.item._id}}">{{item.item.name}}</a></td>
+											<td class="col-md-2">
+													{{item.item.price|round(2,"floor")}}
+											</td>
+											<td class="col-md-2">
+                                                {{item.qty}}
+											</td>
+											<td class="col-md-1">
+													{{(item.item.price * item.qty)|round(2,"floor")}}
+											</td>
                     </form>
                 </tr>
                 {% endfor %}

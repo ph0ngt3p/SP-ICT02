@@ -1,5 +1,9 @@
 'use strict'
 
-const models = require('./mongoose')
+const mongoose = require('./mongoose')
+const Cart = require('./Cart')
 
-module.exports = models
+module.exports = {
+  Cart,
+  ...mongoose
+}
