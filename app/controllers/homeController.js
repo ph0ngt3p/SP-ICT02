@@ -9,7 +9,6 @@ async function home (ctx) {
   const itemsCount = await models.Wears.getTotalNumberOfItems()
   return ctx.render('home', {
     items,
-    useRangeBasedPagination: false,
     itemCount: itemsCount,
     page,
     pages: itemsCount > 8 ? Math.ceil(itemsCount / 8) : 0
