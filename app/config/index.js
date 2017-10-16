@@ -6,4 +6,9 @@ const mongodb = require('./mongodb')
 const server = require('./server')
 const general = require('./general')
 
-module.exports = Object.assign({}, general, server, logger, mongodb)
+module.exports = {
+  ...server,
+  ...general,
+  ...mongodb,
+  ...logger
+}
