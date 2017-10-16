@@ -2,46 +2,39 @@
 
 module.exports = class Cart {
   constructor (oldCart) {
-    this.data = {
-      items: oldCart.data.items || [],
-      totals: oldCart.data.totals || 0
+    this.items = oldCart.items || {}
+    this.totalPrice = oldCart.totalPrice || 0
+  }
+
+  addToCart (item, id) {
+    if (!this.items[id]) {
+      this.items[id] = {
+        item,
+        qty: 0,
+        price: 0
+      }
+    }
+    this.items[id].qty += 1
+    this.items[id].price = this.items[id].item.price * this.items[id].qty
+    this.totalPrice += this.items[id].item.price
+  }
+
+  removeOne (id) {
+    this.items[id].qty -= 1
+    this.items[id].price -= this.items[id].item.price
+    this.totalPrice -= this.items[id].item.price
+
+    if (this.items[id].qty <= 0) {
+      delete this.items[id]
     }
   }
 
-  inCart (productID) {
-    let found = false
-    this.data.items.forEach((item) => {
-      if (item.id === productID) {
-        found = true
-      }
-    })
-    return found
+  removeItem (id) {
+    this.totalPrice -= this.items[id].price
+    delete this.items[id]
   }
 
-  addToCart (product, qty) {
-    if (!this.inCart(product._id)) {
-      const prod = {
-        id: product._id,
-        name: product.name,
-        price: parseInt(product.price, 10),
-        qty,
-        image: product.image
-      }
-      this.data.items.push(prod)
-      this.calculateTotals()
-    } else {
-      const item = this.data.items.filter((item) => item.id === product._id)
-      item.qty += 1
-    }
-  }
-
-  calculateTotals () {
-    this.data.totals = 0
-    this.data.items.forEach((item) => {
-      const price = item.price
-      const qty = item.qty
-      const amount = price * qty
-      this.data.totals += amount
-    })
+  toArray () {
+    return Object.values(this.items)
   }
 }

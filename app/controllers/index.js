@@ -2,13 +2,15 @@
 
 const Router = require('koa-router')
 const home = require('./homeController')
-const wearDetails = require('./wearDetailsController')
-const addToCart = require('./cartController')
+const viewWearDetails = require('./viewWearDetailsController')
+const addToCart = require('./addToCartController')
+const viewCart = require('./viewCartController')
 
 const routes = new Router()
 
 routes.get('/', home)
-routes.get('/item/:id', wearDetails)
+routes.get('/item/:id', viewWearDetails)
 routes.get('/add_to_cart/:id', addToCart)
+routes.get('/cart', viewCart)
 
 module.exports = routes
