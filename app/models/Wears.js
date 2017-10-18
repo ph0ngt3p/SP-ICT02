@@ -13,17 +13,20 @@ const wearSchema = new mongoose.Schema({
 })
 
 async function getAllItemsByPage (page) {
+  const [items, itemsCount] = await Promise.all([
+    this.find()
+        .skip(page * 9)
+        .limit(9)
+        .select('name')
+        .select('price')
+        .select('image')
+        .lean()
+        .exec(),
+    this.getTotalNumberOfItems()
+  ])
   return {
-    items: await this
-                  .find()
-                  .skip(page * 9)
-                  .limit(9)
-                  .select('name')
-                  .select('price')
-                  .select('image')
-                  .lean()
-                  .exec(),
-    itemsCount: await this.getTotalNumberOfItems()
+    items,
+    itemsCount
   }
 }
 
@@ -35,19 +38,20 @@ async function getItemDetails (id) {
   return this.findOne({ _id: id }).exec()
 }
 
-async function getSearchItem (name, page) {
-  const upperCaseName = name.toUpperCase()
-  const itemsCount = await this.find({ name: new RegExp(`^${upperCaseName}.+`, 'i') }).count().exec()
+async function getSearchItem (keyword, page) {
+  const [items, itemsCount] = await Promise.all([
+    this.find({ name: new RegExp(`${keyword}`, 'i') })
+        .skip(page * 6)
+        .limit(6)
+        .select('name')
+        .select('price')
+        .select('image')
+        .lean()
+        .exec(),
+    this.find({ name: new RegExp(`${keyword}`, 'i') }).count().exec()
+  ])
   return {
-    items: await this
-                  .find({ name: new RegExp(`^${upperCaseName}.+`, 'i') })
-                  .skip(page * 6)
-                  .limit(6)
-                  .select('name')
-                  .select('price')
-                  .select('image')
-                  .lean()
-                  .exec(),
+    items,
     itemsCount
   }
 }
