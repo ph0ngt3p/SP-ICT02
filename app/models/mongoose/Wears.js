@@ -63,4 +63,4 @@ wearSchema.static({
   getSearchItem
 })
 
-module.exports = wearSchema
+module.exports = mongoose.model('Wears', wearSchema, 'Wears')

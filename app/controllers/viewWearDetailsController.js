@@ -1,7 +1,7 @@
 'use strict'
 
 const compose = require('koa-compose')
-const models = require('../models')
+const models = require('../models/mongoose')
 
 async function viewWearDetails (ctx) {
   const { id } = ctx.params
