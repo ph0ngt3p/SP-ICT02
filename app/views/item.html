@@ -44,32 +44,24 @@
                 </div>
             </div>
 
-            <!-- Product Item Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 style="margin-top: 0px;" class="page-header">{{item.name}}<br/>
-                        <small class="small">{{item.detail}}</small>
-                    </h1>
-                </div>
-            </div>
-            <!-- /.row -->
-
             <!-- Product Item Row -->
             <div class="row">
-                <div class="col-md-1"></div>
                 <div class="col-md-6">
-                    <img class="img-responsive" src="{{item.image}}" alt="">
+                    <img width="340px" class="img-responsive" src="{{item.image}}" alt="" style="display: block; margin: auto;">
                 </div>
 
-                <div class="col-md-4">
-                    <h3>Product Description</h3>
+                <div class="col-md-6">
+                    <h3 style="margin-top: 0px;" class="page-header">{{item.name}}<br/>
+                        <small class="small">{{item.detail}}</small>
+                    </h3>
                     <p>
                         Color: {{item.color}}<br/>
                         Size: {{item.size}}<br/>
-                        Price: {{item.price}} VND<br/>
                         Quantity: {{item.quantity}} pcs<br/>
                     </p>
-
+                    <div class="price">
+                        <p style="font-weight: bold;">{{item.price}} VND</p>
+                    </div>
                     <form action="/add_to_cart/{{item._id}}" role="form" method="get">
                         <button class="btn btn-primary" type="submit">
                         Add to cart
@@ -79,80 +71,32 @@
 
                 </div>
 
-                <div class="col-md-1"></div>
 
             </div>
             <!-- /.row -->
 
-            <!-- Related Products Row -->
             <div class="row">
 
-                <!-- <div class="col-lg-12">
-                    <h3 class="page-header">Latest Reviews</h3>
-                </div> -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h3 class="page-header">Latest Reviews</h3>
-
-                        {% for review in item.reviews %}
-
-                        <!-- Comment -->
-                        <div>
-                            <div>
-                                <h4 class="media-heading">{{review.name}}
-                                    <small>{{review.date|date}}</small>
-                                </h4>
-                                <div class="ratings" style="padding-left: 0px;">
-
-                                    {% for num in range(1,6) %}
-                                    <span class="glyphicon {{'glyphicon-star' if review.stars >= num else 'glyphicon-star-empty'}}"></span> {% endfor %}
-
-                                </div>
-                                {{review.comment}}
-                            </div>
-                        </div>
-
-                        <hr/> {% endfor %}
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="well">
-                            <h4>Add a Review:</h4>
-                            <form action="/item/{{item._id}}/reviews" role="form" method="post">
-                                <div class="form-group">
-                                    <label for="review">Review:</label>
-                                    <textarea name="review" class="form-control" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Name:</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter display name">
-                                </div>
-                                <div class="form-group">
-
-                                    <label class="radio-inline">
-                                    <input type="radio" name="stars" id="stars" value="1"> 1 <span class="glyphicon glyphicon-star"></span>
-                                </label>
-                                    <label class="radio-inline">
-                                    <input type="radio" name="stars" id="stars" value="2"> 2 <span class="glyphicon glyphicon-star"></span>
-                                </label>
-                                    <label class="radio-inline">
-                                    <input type="radio" name="stars" id="stars" value="3"> 3 <span class="glyphicon glyphicon-star"></span>
-                                </label>
-                                    <label class="radio-inline">
-                                    <input type="radio" name="stars" id="stars" value="4"> 4 <span class="glyphicon glyphicon-star"></span>
-                                </label>
-                                    <label class="radio-inline">
-                                    <input type="radio" name="stars" id="stars" value="5" checked> 5 <span class="glyphicon glyphicon-star"></span>
-                                </label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit Review</button>
-                            </form>
-                        </div>
-
-                    </div>
+                <div class="col-lg-12">
+                    <h3 class="page-header">Comment</h3>
                 </div>
 
+                <div class="col-lg-12">
+                    <div id="disqus_thread"></div>
+                        <script>
 
-            </div>
+                        
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://xyzwear.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+                    </div>
+                </div>
 
             <!-- Related Products Row -->
             <div class="row">
