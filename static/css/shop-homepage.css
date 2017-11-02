@@ -65,3 +65,11 @@ footer {
 .well {
     margin-top: 40px;
 }
+
+.price p {
+    font-size: 25px;
+    color: #DC3912;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 5px 0 5px 0;
+}
