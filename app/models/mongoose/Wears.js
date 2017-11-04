@@ -2,6 +2,9 @@
 
 const mongoose = require('mongoose')
 
+/* D in SOLID - Dependence Inversion: The controller will call the methods through Mongoose instead of straight from
+   the db, therefore we do not need to refactor the controller if we want to change the db */
+
 const wearSchema = new mongoose.Schema({
   name: { type: String, required: true },
   color: { type: String, required: true },
