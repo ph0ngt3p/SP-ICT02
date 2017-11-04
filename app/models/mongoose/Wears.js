@@ -1,5 +1,7 @@
 'use strict'
 
+// the S in S.O.L.I.D: every function in this class only have one job, which is execute a specific query to the database
+
 const mongoose = require('mongoose')
 
 /* D in SOLID - Dependence Inversion: The controller will call the methods through Mongoose instead of straight from

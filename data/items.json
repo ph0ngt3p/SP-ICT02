@@ -1,322 +1,130 @@
 {
   "name" : "AO NI CHUI DAU NAM MAT CAO",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "549000",
   "quantity" : "12",
+  "tag": ["AO NI", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_042_217_01_20300020_01_668x1000.jpg"
 } {
   "name" : "AO NI CHUI DAU NAM MAT NA HO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "549000",
   "quantity" : "12",
+  "tag": ["AO NI", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_037_217_01_21300019_01_668x1000.jpg"
 } {
   "name" : "SO MI NAM TUI NGUC SUA TUOI",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "499000",
   "quantity" : "12",
+  "tag": ["SO MI", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_17_2_06_020_217_01_40200042_01_668x1000.jpg"
 } {
   "name" : "AO THUN NAM OVER SIZE/LONG LINE",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "399000",
   "quantity" : "12",
+  "tag": ["AO THUN", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_06_016_217_01_20300050_01_668x1000.jpg"
 } {
   "name" : "AO THUN NAM OVERSIZE BASIC",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "299000",
   "quantity" : "12",
+  "tag": ["AO THUN", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_05_022_217_01_10800027_01_668x1000.jpg"
 } {
   "name" : "AO THUN NAM ROCK HAND SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "399000",
   "quantity" : "12",
+  "tag": ["AO THUN", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_037_217_01_20600053_01_668x1000.jpg"
 } {
   "name" : "AO THUN NAM BS XUC XAC SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "399000",
   "quantity" : "12",
+  "tag": ["AO THUN", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_023_217_01_20600053_01_668x1000.jpg"
 } {
   "name" : "SWEATSHIRT - AO NI CHUI DAU MAT NA MEO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
+  "size" : ["M", "L", "XL"],
   "price" : "549000",
   "quantity" : "12",
+  "tag": ["AO NI", "NAM"],
   "detail" : "Thuong hieu bo sua",
   "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_036_217_01_10200040_01_668x1000.jpg"
 } {
-  "name" : "AO NI CHUI DAU NAM MAT CAO",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
+  "name" : "JEAN CROP NAM IN GRAPHIC WYLY GAU. TREND",
+  "size" : ["M", "L", "XL"],
+  "price" : "649000",
   "quantity" : "12",
-  "detail" : "Xuất xứ: Thương hiệu Bò sữa",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_042_217_01_20300020_01_668x1000.jpg"
-} {
-  "name" : "AO NI CHUI DAU NAM MAT NA HO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
+  "tag": ["JEAN CROP", "NAM"],
   "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_037_217_01_21300019_01_668x1000.jpg"
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171021/1_2_21_2_06_004_217_01_10300034_01_668x1000.jpg"
 } {
-  "name" : "SO MI NAM TUI NGUC SUA TUOI",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "499000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_17_2_06_020_217_01_40200042_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM OVER SIZE/LONG LINE",
-  "color" : "red",
-  "size" : "XL",
+  "name" : "AO PHONG NAM LIVE YOUNG IN GRAPHIC. PUNK.GRAPHIC",
+  "size" : ["M", "L", "XL"],
   "price" : "399000",
   "quantity" : "12",
+  "tag": ["AO PHONG", "NAM"],
   "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_06_016_217_01_20300050_01_668x1000.jpg"
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171101/1_2_02_2_02_036_217_01_20700022_03_668x1000.jpg"
 } {
-  "name" : "AO THUN NAM OVERSIZE BASIC",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "299000",
+  "name" : "VAY NI IN GRAPHIC PHOI CHAN REN.PUNK.GRAPHIC",
+  "size" : ["M", "L", "XL"],
+  "price" : "599000",
   "quantity" : "12",
+  "tag": ["VAY NI", "NU"],
   "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_05_022_217_01_10800027_01_668x1000.jpg"
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_10_1_04_009_217_01_10500038_01_668x1000.jpg"
 } {
-  "name" : "AO THUN NAM ROCK HAND SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
+  "name" : "VAY DAI TAY BEO NHUN. BLACKLINE. SMART CASUAL",
+  "size" : ["M", "L", "XL"],
+  "price" : "649000",
+  "quantity" : "12",
+  "tag": ["VAY DAI", "NU"],
+  "detail" : "Thuong hieu bo sua",
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_10_1_04_008_217_01_11200029_01_668x1000.jpg"
+} {
+  "name" : "JACKET BO REGULAR FIT. CODE. TREND",
+  "size" : ["M", "L", "XL"],
+  "price" : "799000",
+  "quantity" : "12",
+  "tag": ["JACKET BO", "NU"],
+  "detail" : "Thuong hieu bo sua",
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_08_1_06_003_217_01_10600036_01_668x1000.jpg"
+} {
+  "name" : "HOODIE OFF-SHOULDER NO TAY. BASIC",
+  "size" : ["M", "L", "XL"],
+  "price" : "599000",
+  "quantity" : "12",
+  "tag": ["HOODIE", "NU"],
+  "detail" : "Thuong hieu bo sua",
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171018/1_2_06_1_06_010_217_01_11200050_01_667x1000.jpg"
+} {
+  "name" : "AO PHONG BO SUA NAM.SUA DAC PUNK.ROCK HAND SIGN",
+  "size" : ["M", "L", "XL"],
   "price" : "399000",
   "quantity" : "12",
+  "tag": ["AO PHONG", "NAM"],
   "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_037_217_01_20600053_01_668x1000.jpg"
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20170926/b02ma_sda12_w17ctcac_01_762x1100.jpg"
 } {
-  "name" : "AO THUN NAM BS XUC XAC SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
+  "name" : "AO PHONG BO SUA NU.SUA TUOI CODE.IN HOA TIET",
+  "size" : ["M", "L", "XL"],
+  "price" : "349000",
   "quantity" : "12",
+  "tag": ["AO PHONG", "NU"],
   "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_023_217_01_20600053_01_668x1000.jpg"
-} {
-  "name" : "SWEATSHIRT - AO NI CHUI DAU MAT NA MEO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_036_217_01_10200040_01_668x1000.jpg"
-} {
-  "name" : "AO NI CHUI DAU NAM MAT CAO",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Xuất xứ: Thương hiệu Bò sữa",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_042_217_01_20300020_01_668x1000.jpg"
-} {
-  "name" : "AO NI CHUI DAU NAM MAT NA HO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_037_217_01_21300019_01_668x1000.jpg"
-} {
-  "name" : "SO MI NAM TUI NGUC SUA TUOI",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "499000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_17_2_06_020_217_01_40200042_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM OVER SIZE/LONG LINE",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_06_016_217_01_20300050_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM OVERSIZE BASIC",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "299000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_05_022_217_01_10800027_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM ROCK HAND SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_037_217_01_20600053_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM BS XUC XAC SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_023_217_01_20600053_01_668x1000.jpg"
-} {
-  "name" : "SWEATSHIRT - AO NI CHUI DAU MAT NA MEO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_036_217_01_10200040_01_668x1000.jpg"
-} {
-  "name" : "AO NI CHUI DAU NAM MAT CAO",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Xuất xứ: Thương hiệu Bò sữa",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_042_217_01_20300020_01_668x1000.jpg"
-} {
-  "name" : "AO NI CHUI DAU NAM MAT NA HO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_037_217_01_21300019_01_668x1000.jpg"
-} {
-  "name" : "SO MI NAM TUI NGUC SUA TUOI",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "499000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_17_2_06_020_217_01_40200042_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM OVER SIZE/LONG LINE",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_06_016_217_01_20300050_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM OVERSIZE BASIC",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "299000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_05_022_217_01_10800027_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM ROCK HAND SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_037_217_01_20600053_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM BS XUC XAC SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_023_217_01_20600053_01_668x1000.jpg"
-} {
-  "name" : "SWEATSHIRT - AO NI CHUI DAU MAT NA MEO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_036_217_01_10200040_01_668x1000.jpg"
-} {
-  "name" : "AO NI CHUI DAU NAM MAT CAO",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Xuất xứ: Thương hiệu Bò sữa",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_042_217_01_20300020_01_668x1000.jpg"
-} {
-  "name" : "AO NI CHUI DAU NAM MAT NA HO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_037_217_01_21300019_01_668x1000.jpg"
-} {
-  "name" : "SO MI NAM TUI NGUC SUA TUOI",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "499000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_17_2_06_020_217_01_40200042_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM OVER SIZE/LONG LINE",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_06_016_217_01_20300050_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM OVERSIZE BASIC",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "299000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_05_022_217_01_10800027_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM ROCK HAND SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_037_217_01_20600053_01_668x1000.jpg"
-} {
-  "name" : "AO THUN NAM BS XUC XAC SUA DAC PUNK",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "399000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_02_2_02_023_217_01_20600053_01_668x1000.jpg"
-} {
-  "name" : "SWEATSHIRT - AO NI CHUI DAU MAT NA MEO TRUNG THU",
-  "color" : "red",
-  "size" : "XL",
-  "price" : "549000",
-  "quantity" : "12",
-  "detail" : "Thuong hieu bo sua",
-  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20171011/1_2_19_2_02_036_217_01_10200040_01_668x1000.jpg"
+  "image" : "http://cdn.nhanh.vn/cdn/store/81/ps/20170930/b02fe_stu01_w17ctsm9_01_693x1000.jpg"
 }
 

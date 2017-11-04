@@ -1,5 +1,7 @@
 'use strict'
 
+// the S in S.O.L.I.D: every controller only have one job, which is rendering the corresponding page with data
+
 const Router = require('koa-router')
 const home = require('./homeController')
 const search = require('./searchController')
