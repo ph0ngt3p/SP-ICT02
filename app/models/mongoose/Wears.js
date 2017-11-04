@@ -1,5 +1,7 @@
 'use strict'
 
+// the O in SOLID: If you want to add a new feature, you can easily add in new functions without the need to modify the existing ones
+
 const mongoose = require('mongoose')
 
 const wearSchema = new mongoose.Schema({
@@ -12,6 +14,7 @@ const wearSchema = new mongoose.Schema({
   image: { type: String, required: true }
 })
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getAllItemsByPage (page) {
   const [items, itemsCount] = await Promise.all([
     this.find()
@@ -30,14 +33,17 @@ async function getAllItemsByPage (page) {
   }
 }
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getTotalNumberOfItems () {
   return this.find().count().exec()
 }
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getItemDetails (id) {
   return this.findOne({ _id: id }).exec()
 }
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getSearchItem (keyword, page) {
   const [items, itemsCount] = await Promise.all([
     this.find({ name: new RegExp(`${keyword}`, 'i') })
@@ -55,6 +61,8 @@ async function getSearchItem (keyword, page) {
     itemsCount
   }
 }
+
+// the O in SOLID: there is room for extension
 
 wearSchema.static({
   getAllItemsByPage,
