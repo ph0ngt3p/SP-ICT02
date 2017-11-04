@@ -1,6 +1,8 @@
 'use strict'
 
-// the O in SOLID: If you want to add new feature, you can easily add in new functions without the need to modify the existing ones
+/* the O in SOLID: If you want to add new feature, you can easily add in new functions without the need to modify the existing ones
+
+   the S in S.O.L.I.D: every function in this class only have one job, which is described in the function name */
 
 module.exports = class Cart {
   constructor (oldCart) {

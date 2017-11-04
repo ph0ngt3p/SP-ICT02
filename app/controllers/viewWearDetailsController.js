@@ -6,9 +6,8 @@ const models = require('../models/mongoose')
 
 async function viewWearDetails (ctx) {
   const { id } = ctx.params
-  let item
   try {
-    item = await models.Wears.getItemDetails(id)
+    const item = await models.Wears.getItemDetails(id)
     return ctx.render('item', {
       item
     })
