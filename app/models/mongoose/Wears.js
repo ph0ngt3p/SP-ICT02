@@ -1,5 +1,7 @@
 'use strict'
 
+// the S in S.O.L.I.D: every function in this class only have one job, which is execute a specific query to the database
+
 const mongoose = require('mongoose')
 
 const wearSchema = new mongoose.Schema({

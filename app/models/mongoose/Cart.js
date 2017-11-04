@@ -1,5 +1,7 @@
 'use strict'
 
+// the S in S.O.L.I.D: every function in this class only have one job, which is described in the function name
+
 module.exports = class Cart {
   constructor (oldCart) {
     this.items = oldCart.items || {}
