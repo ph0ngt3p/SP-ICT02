@@ -1,11 +1,13 @@
 'use strict'
 
-// the S in S.O.L.I.D: every function in this class only have one job, which is execute a specific query to the database
+/* the O in SOLID: If you want to add a new feature, you can easily add in new functions without the need to modify the existing ones
+
+   the S in S.O.L.I.D: every function in this class only have one job, which is execute a specific query to the database
+   
+   the D in SOLID - Dependence Inversion: The controller will call the methods through Mongoose instead of straight from
+    the db, therefore we do not need to refactor the controller if we want to change the db */
 
 const mongoose = require('mongoose')
-
-/* D in SOLID - Dependence Inversion: The controller will call the methods through Mongoose instead of straight from
-   the db, therefore we do not need to refactor the controller if we want to change the db */
 
 const wearSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -17,6 +19,7 @@ const wearSchema = new mongoose.Schema({
   image: { type: String, required: true }
 })
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getAllItemsByPage (page) {
   const [items, itemsCount] = await Promise.all([
     this.find()
@@ -35,14 +38,17 @@ async function getAllItemsByPage (page) {
   }
 }
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getTotalNumberOfItems () {
   return this.find().count().exec()
 }
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getItemDetails (id) {
   return this.findOne({ _id: id }).exec()
 }
 
+// the O in SOLID: Should not modify this when introducing new features
 async function getSearchItem (keyword, page) {
   const [items, itemsCount] = await Promise.all([
     this.find({ name: new RegExp(`${keyword}`, 'i') })
@@ -60,6 +66,8 @@ async function getSearchItem (keyword, page) {
     itemsCount
   }
 }
+
+// the O in SOLID: there is room for extension
 
 wearSchema.static({
   getAllItemsByPage,
