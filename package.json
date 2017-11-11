@@ -33,6 +33,7 @@
     "winston": "^2.4.0"
   },
   "devDependencies": {
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.1.3",
     "eslint-plugin-import": "2.2.0",
@@ -45,11 +46,18 @@
     "super-request": "1.2.0"
   },
   "scripts": {
-    "start": "nodemon .",
+    "start": "node .",
+    "start:dev": "nodemon .",
+    "test": "jest --forceExit",
     "lint": "eslint ."
   },
+  "jest": {
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "./test/setup.js"
+  },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "license": "MIT"
 }

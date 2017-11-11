@@ -1,7 +1,7 @@
 'use strict'
 
 const compose = require('koa-compose')
-const models = require('../models/mongoose')
+const models = require('../../models/mongoose')
 
 async function search (ctx) {
   const searchStr = ctx.query.query

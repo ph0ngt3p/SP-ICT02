@@ -1,7 +1,7 @@
 'use strict'
 
 const compose = require('koa-compose')
-const models = require('../models/mongoose')
+const models = require('../../models/mongoose')
 
 async function home (ctx) {
   const page = ctx.query.page ? parseInt(ctx.query.page, 10) : 0

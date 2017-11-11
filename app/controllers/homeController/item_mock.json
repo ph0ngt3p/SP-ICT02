@@ -1,0 +1,45 @@
+{
+  "items": [
+    {
+      "name": "test1",
+      "price": "6969",
+      "image": "a.jpg"
+    },
+    {
+      "name": "test2",
+      "price": "6969",
+      "image": "a.jpg"
+    },
+    {
+      "name": "test3",
+      "price": "6969",
+      "image": "a.jpg"
+    },
+    {
+      "name": "test4",
+      "price": "6969",
+      "image": "a.jpg"
+    },
+    {
+      "name": "test5",
+      "price": "6969",
+      "image": "a.jpg"
+    },
+    {
+      "name": "test6",
+      "price": "6969",
+      "image": "a.jpg"
+    },
+    {
+      "name": "test7",
+      "price": "6969",
+      "image": "a.jpg"
+    },
+    {
+      "name": "test8",
+      "price": "6969",
+      "image": "a.jpg"
+    }
+  ],
+  "itemsCount": 8
+}
