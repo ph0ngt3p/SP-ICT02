@@ -13,7 +13,7 @@ async function viewWearDetails (ctx) {
     })
   } catch (e) {
     logger.error('Error happened: Wrong id entered!')
-    return ctx.render('404')
+    return ctx.render('errors/404')
   }
 }
 
