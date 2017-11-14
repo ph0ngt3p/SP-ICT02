@@ -2,12 +2,12 @@
 
 const logger = require('winston')
 const compose = require('koa-compose')
-const models = require('../../models/mongoose')
+const { Wears } = require('../../models/mongoose')
 
 async function viewWearDetails (ctx) {
   const { id } = ctx.params
   try {
-    const item = await models.Wears.getItemDetails(id)
+    const item = await Wears.getItemDetails(id)
     return ctx.render('item', {
       item
     })

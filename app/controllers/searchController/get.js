@@ -1,12 +1,12 @@
 'use strict'
 
 const compose = require('koa-compose')
-const models = require('../../models/mongoose')
+const { Wears } = require('../../models/mongoose')
 
 async function search (ctx) {
   const searchStr = ctx.query.query
   const page = ctx.query.page ? parseInt(ctx.query.page, 10) : 0
-  const { items, itemsCount } = await models.Wears.getSearchItem(searchStr, page)
+  const { items, itemsCount } = await Wears.getSearchItem(searchStr, page)
   return ctx.render('search', {
     items,
     queryString: searchStr,

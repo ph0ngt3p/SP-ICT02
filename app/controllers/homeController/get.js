@@ -1,11 +1,11 @@
 'use strict'
 
 const compose = require('koa-compose')
-const models = require('../../models/mongoose')
+const { Wears } = require('../../models/mongoose')
 
 async function home (ctx) {
   const page = ctx.query.page ? parseInt(ctx.query.page, 10) : 0
-  const { items, itemsCount } = await models.Wears.getAllItemsByPage(page)
+  const { items, itemsCount } = await Wears.getAllItemsByPage(page)
   return ctx.render('home', {
     items,
     itemsCount,

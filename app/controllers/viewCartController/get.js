@@ -1,7 +1,7 @@
 'use strict'
 
 const compose = require('koa-compose')
-const models = require('../../models/mongoose')
+const { Cart } = require('../../models/mongoose')
 
 async function viewCart (ctx) {
   if (!ctx.session.cart) {
@@ -10,7 +10,7 @@ async function viewCart (ctx) {
       total: 0
     })
   }
-  const cart = new models.Cart(ctx.session.cart)
+  const cart = new Cart(ctx.session.cart)
   return ctx.render('cart', {
     cart: cart.toArray(),
     total: cart.totalPrice

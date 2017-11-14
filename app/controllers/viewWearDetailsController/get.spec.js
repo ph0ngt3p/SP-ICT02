@@ -1,7 +1,7 @@
 'use strict'
 
 const request = require('super-request')
-const models = require('../../models/mongoose')
+const { Wears } = require('../../models/mongoose')
 const app = require('../../app')
 
 const url = '/item/:id'
@@ -19,7 +19,7 @@ describe(`GET ${url}`, () => {
   }
 
   beforeEach(() => {
-    models.Wears.getItemDetails = jest.fn(async () => wearDetails)
+    Wears.getItemDetails = jest.fn(async () => wearDetails)
   })
 
   it('should return every single detail of the wear', async () => {
@@ -40,6 +40,6 @@ Detail: ${wearDetails.detail}
 Image: ${wearDetails.image}`
 
     expect(response.body).toEqual(expectedResponse)
-    expect(models.Wears.getItemDetails).toBeCalledWith('1')
+    expect(Wears.getItemDetails).toBeCalledWith('1')
   })
 })
