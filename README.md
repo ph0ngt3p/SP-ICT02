@@ -27,8 +27,14 @@ $ mongoimport -d Wears -c Wears data/items.json
 ```
 - Davai
 
-**Run:**
+**Start developing (nodemon watching for code changes):**
 
 ```sh
-$ npm start / yarn start
+$ npm run start:dev / yarn start:dev
+```
+
+**Run normally:**
+
+```sh
+$ npm run start / yarn start
 ```

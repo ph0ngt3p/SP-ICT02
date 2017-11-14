@@ -1,127 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
+{% block breadcrumb %}
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">{{item.name}}</li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">	
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% block content %}
+    <!-- Product Item Row -->
+    <div class="row">
+        <div class="col-md-6">
+            <img width="340px" class="img-responsive" src="{{item.image}}" alt="" style="display: block; margin: auto;">
+        </div>
 
-    <title>XYZ Wear</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="/css/shop-homepage.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    {% include "includes/nav.html" %}
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <div class="row">
-                <div class="col-md-12">
-                    <ol class="breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li class="active">{{item.name}}</li>
-                    </ol>
-                </div>
+        <div class="col-md-6">
+            <h3 style="margin-top: 0px;" class="page-header">{{item.name}}<br/>
+                <small class="small">{{item.detail}}</small>
+            </h3>
+            <p>
+                Color: {{item.color}}<br/>
+                Size: {{item.size}}<br/>
+                Quantity: {{item.quantity}} pcs<br/>
+            </p>
+            <div class="price">
+                <p style="font-weight: bold;">{{item.price}} VND</p>
             </div>
-
-            <!-- Product Item Row -->
-            <div class="row">
-                <div class="col-md-6">
-                    <img width="340px" class="img-responsive" src="{{item.image}}" alt="" style="display: block; margin: auto;">
-                </div>
-
-                <div class="col-md-6">
-                    <h3 style="margin-top: 0px;" class="page-header">{{item.name}}<br/>
-                        <small class="small">{{item.detail}}</small>
-                    </h3>
-                    <p>
-                        Color: {{item.color}}<br/>
-                        Size: {{item.size}}<br/>
-                        Quantity: {{item.quantity}} pcs<br/>
-                    </p>
-                    <div class="price">
-                        <p style="font-weight: bold;">{{item.price}} VND</p>
-                    </div>
-                    <form action="/add_to_cart/{{item._id}}" role="form" method="get">
-                        <button class="btn btn-primary" type="submit">
-                        Add to cart
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </button>
-                    </form>
-
-                </div>
-
-
-            </div>
-            <!-- /.row -->
-
-            <div class="row">
-
-                <div class="col-lg-12">
-                    <h3 class="page-header">Comment</h3>
-                </div>
-
-                <div class="col-lg-12">
-                    <div id="disqus_thread"></div>
-                        <script>
-
-                        
-                        (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://xyzwear.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                        })();
-                        </script>
-                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
-                    </div>
-                </div>
-
-            <!-- Related Products Row -->
-            <div class="row">
-
-                <div class="col-lg-12">
-                    <h3 class="page-header">Related Products</h3>
-                </div>
-
-                {% for relatedItem in relatedItems %}
-                <div class="col-sm-3 col-xs-6">
-                    <a href="/item/{{relatedItem._id}}">
-                        <img class="img-responsive portfolio-item" src="/static/{{relatedItem.img_url}}" alt="">
-                    </a>
-                </div>
-                {% endfor %}
-
-            </div>
-            <!-- /.row -->
+            <form action="/add_to_cart/{{item._id}}" role="form" method="get">
+                <button class="btn btn-primary" type="submit">
+                Add to cart
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+            </form>
 
         </div>
 
+
     </div>
+    <!-- /.row -->
 
-    {% include "includes/footer.html" %}
+    <div class="row">
 
-</body>
+        <div class="col-lg-12">
+            <h3 class="page-header">Comment</h3>
+        </div>
 
-</html>
+        <div class="col-lg-12">
+            <div id="disqus_thread"></div>
+                <script>
+
+                
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://xyzwear.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+            </div>
+        </div>
+
+    <!-- Related Products Row -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Products</h3>
+        </div>
+
+        {% for relatedItem in relatedItems %}
+        <div class="col-sm-3 col-xs-6">
+            <a href="/item/{{relatedItem._id}}">
+                <img class="img-responsive portfolio-item" src="/static/{{relatedItem.img_url}}" alt="">
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+    <!-- /.row -->
+{% endblock %}

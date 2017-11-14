@@ -15,6 +15,7 @@
     "node": ">=8.4.0"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "boom": "^6.0.0",
     "dotenv": "^4.0.0",
     "joi": "^13.0.0",
@@ -29,6 +30,7 @@
     "lodash": "^4.17.4",
     "mongoose": "^4.12.2",
     "nunjucks": "^3.0.1",
+    "qs": "^6.5.1",
     "semver": "^5.4.1",
     "winston": "^2.4.0"
   },
@@ -39,9 +41,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-promise": "3.5.0",
     "jest": "20.0.4",
-    "nock": "^9.0.14",
     "nodemon": "1.11.0",
-    "pgtools": "^0.2.3",
     "pre-commit": "1.2.2",
     "super-request": "1.2.0"
   },
