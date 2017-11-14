@@ -2,10 +2,10 @@
 
 const parseQuery = require('./parseQuery')
 const validator = require('./validator')
-const hashPassword = require('./hashPassword')
+const encryptPassword = require('./encryptPassword')
 
 module.exports = {
   validator,
-  hashPassword,
+  encryptPassword,
   parseQuery
 }

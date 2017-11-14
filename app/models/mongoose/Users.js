@@ -16,9 +16,17 @@ const userSchema = new mongoose.Schema({
   }
 })
 
+async function getUserByEmail (email) {
+  return this.findOne({ email }).exec()
+}
+
 async function comparePassword (password) {
   return bcrypt.compare(password, this.password)
 }
+
+userSchema.static({
+  getUserByEmail
+})
 
 userSchema.method({
   comparePassword

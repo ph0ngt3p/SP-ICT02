@@ -17,6 +17,7 @@ routes.get('/search', search)
 routes.get('/item/:id', viewWearDetails)
 routes.get('/add_to_cart/:id', addToCart)
 routes.get('/cart', viewCart)
-routes.post('/register', register)
+routes.get('/register', register.get)
+routes.post('/register', register.post)
 
 module.exports = routes

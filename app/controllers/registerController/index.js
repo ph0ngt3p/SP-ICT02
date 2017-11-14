@@ -1,3 +1,9 @@
 'use strict'
 
-module.exports = require('./post')
+const post = require('./post')
+const get = require('./get')
+
+module.exports = {
+  post,
+  get
+}

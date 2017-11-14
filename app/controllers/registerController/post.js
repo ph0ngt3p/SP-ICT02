@@ -2,24 +2,34 @@
 
 const joi = require('joi')
 const compose = require('koa-compose')
-const { validator, hashPassword } = require('../../middleware')
-// const { Users } = require('../../models/mongoose')
-// const { hashPassword } = require('../../helpers')
+const { validator, encryptPassword } = require('../../middleware')
+const { Users } = require('../../models/mongoose')
 
 const bodySchema = joi.object({
-  username: joi.string().required(),
-  password: joi.string().required()
+  email: joi.string().email().required(),
+  password: joi.string().min(6).alphanum().required()
 }).unknown().required()
 
 async function register (ctx) {
-  const { username, password } = ctx.request.body
-  ctx.body = { username, password }
+  const { email, password } = ctx.request.body
+  const checkEmailExistence = await Users.getUserByEmail(email)
+  if (!checkEmailExistence) {
+    await new Users({
+      email,
+      password
+    }).save()
+    await ctx.redirect('/')
+  } else {
+    await ctx.render('register', {
+      error: 'The email is already taken, please choose a different one'
+    })
+  }
 }
 
 module.exports = compose([
   validator({
     body: bodySchema
   }),
-  hashPassword(10),
+  encryptPassword(10),
   register
 ])
