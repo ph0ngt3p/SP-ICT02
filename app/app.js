@@ -8,7 +8,7 @@ const serve = require('koa-static')
 const views = require('koa-views')
 const session = require('koa-session')
 const nunjucks = require('nunjucks')
-const middleware = require('./middleware')
+const { parseQuery, saveUserSession } = require('./middleware')
 const controllers = require('./controllers')
 const config = require('./config')
 
@@ -26,10 +26,11 @@ const sessionConfig = {
 }
 
 app.use(session(sessionConfig, app))
+app.use(saveUserSession())
 app.use(serve(config.staticDir.root, config.staticDir.options))
 app.use(views(config.template.path, config.template.options))
 app.use(cors())
-app.use(middleware.parseQuery({ allowDots: true }))
+app.use(parseQuery({ allowDots: true }))
 app.use(bodyParser())
 app.use(controllers.routes())
 app.use(controllers.allowedMethods({
@@ -39,7 +40,8 @@ app.use(controllers.allowedMethods({
 }))
 
 nunjucks.configure(config.template.path, {
-  autoescape: true
+  autoescape: true,
+  watch: true
 })
 
 module.exports = app

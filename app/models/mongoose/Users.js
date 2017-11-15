@@ -20,7 +20,7 @@ async function getUserByEmail (email) {
   return this.findOne({ email }).exec()
 }
 
-async function comparePassword (password) {
+async function validatePassword (password) {
   return bcrypt.compare(password, this.password)
 }
 
@@ -29,7 +29,7 @@ userSchema.static({
 })
 
 userSchema.method({
-  comparePassword
+  validatePassword
 })
 
 module.exports = mongoose.model('Users', userSchema, 'Users')

@@ -14,10 +14,12 @@ async function register (ctx) {
   const { email, password } = ctx.request.body
   const checkEmailExistence = await Users.getUserByEmail(email)
   if (!checkEmailExistence) {
-    await new Users({
+    const user = new Users({
       email,
       password
-    }).save()
+    })
+    await user.save()
+    ctx.session.user = user
     await ctx.redirect('/')
   } else {
     await ctx.render('register', {

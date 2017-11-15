@@ -1,6 +1,7 @@
 'use strict'
 
 const compose = require('koa-compose')
+const { checkAuthentication } = require('../../middleware')
 const { Cart, Wears } = require('../../models/mongoose')
 
 async function addToCart (ctx) {
@@ -13,5 +14,6 @@ async function addToCart (ctx) {
 }
 
 module.exports = compose([
+  checkAuthentication(),
   addToCart
 ])
