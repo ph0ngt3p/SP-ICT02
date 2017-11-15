@@ -2,6 +2,7 @@
 
 const joi = require('joi')
 const compose = require('koa-compose')
+const { pick } = require('lodash')
 const { validator } = require('../../middleware')
 const { Users } = require('../../models/mongoose')
 
@@ -24,7 +25,7 @@ async function register (ctx) {
         error: 'Invalid password!'
       })
     } else {
-      ctx.session.user = user
+      ctx.session.user = pick(user, ['_id', 'email'])
       await ctx.redirect('/')
     }
   }

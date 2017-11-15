@@ -1,14 +1,14 @@
 'use strict'
 
 const compose = require('koa-compose')
-const { checkAuthentication } = require('../../middleware')
+const { checkInauthenticated } = require('../../middleware')
 
 async function logout (ctx) {
-  ctx.session = {}
+  ctx.session = null
   return ctx.redirect('/')
 }
 
 module.exports = compose([
-  checkAuthentication(),
+  checkInauthenticated(),
   logout
 ])

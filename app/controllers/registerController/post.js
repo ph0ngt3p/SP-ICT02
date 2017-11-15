@@ -2,7 +2,9 @@
 
 const joi = require('joi')
 const compose = require('koa-compose')
-const { validator, encryptPassword } = require('../../middleware')
+const bcrypt = require('bcrypt')
+const { pick } = require('lodash')
+const { validator } = require('../../middleware')
 const { Users } = require('../../models/mongoose')
 
 const bodySchema = joi.object({
@@ -14,12 +16,13 @@ async function register (ctx) {
   const { email, password } = ctx.request.body
   const checkEmailExistence = await Users.getUserByEmail(email)
   if (!checkEmailExistence) {
+    const encryptedPassword = await encryptPassword(password)
     const user = new Users({
       email,
-      password
+      password: encryptedPassword
     })
     await user.save()
-    ctx.session.user = user
+    ctx.session.user = pick(user, ['_id', 'email'])
     await ctx.redirect('/')
   } else {
     await ctx.render('register', {
@@ -28,10 +31,14 @@ async function register (ctx) {
   }
 }
 
+async function encryptPassword (pw, saltRounds) {
+  const salt = await bcrypt.genSalt(saltRounds)
+  return bcrypt.hash(pw, salt)
+}
+
 module.exports = compose([
   validator({
     body: bodySchema
   }),
-  encryptPassword(10),
   register
 ])

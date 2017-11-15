@@ -2,14 +2,14 @@
 
 const parseQuery = require('./parseQuery')
 const validator = require('./validator')
-const encryptPassword = require('./encryptPassword')
 const saveUserSession = require('./saveUserSession')
-const checkAuthentication = require('./checkAuthentication')
+const checkAuthenticated = require('./checkAuthenticated')
+const checkInauthenticated = require('./checkInauthenticated')
 
 module.exports = {
   validator,
-  encryptPassword,
   parseQuery,
   saveUserSession,
-  checkAuthentication
+  checkAuthenticated,
+  checkInauthenticated
 }

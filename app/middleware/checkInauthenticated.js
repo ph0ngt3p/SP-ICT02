@@ -1,7 +1,7 @@
 'use strict'
 
-function checkAuthenticationFactory () {
-  return async function checkAuthenticationMiddleware (ctx, next) {
+function checkInauthenticatedFactory () {
+  return async function checkInauthenticatedMiddleware (ctx, next) {
     if (!ctx.session.user) {
       await ctx.render('errors/400', {
         error: 'You must log in first!'
@@ -12,4 +12,4 @@ function checkAuthenticationFactory () {
   }
 }
 
-module.exports = checkAuthenticationFactory
+module.exports = checkInauthenticatedFactory

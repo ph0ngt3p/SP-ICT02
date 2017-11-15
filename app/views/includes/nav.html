@@ -29,15 +29,16 @@
                             <a href="/register">Sign Up</a>
                         </li>
                     {% else %}
+                        <li class="navbar-text navbar-left">Logged in as {{ session.user.email }}</li>
                         <li>
                             <a href="/logout">Logout</a>
                         </li>
+                        <li>
+                            <a href="/cart">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart
+                            </a>
+                        </li>
                     {% endif %}
-                    <li>
-                        <a href="/cart">
-                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
