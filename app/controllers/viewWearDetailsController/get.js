@@ -1,6 +1,5 @@
 'use strict'
 
-const logger = require('winston')
 const compose = require('koa-compose')
 const { Wears } = require('../../models/mongoose')
 
@@ -12,7 +11,6 @@ async function viewWearDetails (ctx) {
       item
     })
   } catch (e) {
-    logger.error('Error happened: Wrong id entered!')
     return ctx.render('errors/404')
   }
 }

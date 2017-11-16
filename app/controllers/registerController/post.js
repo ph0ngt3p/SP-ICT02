@@ -5,7 +5,7 @@ const compose = require('koa-compose')
 const bcrypt = require('bcrypt')
 const { pick } = require('lodash')
 const { validator } = require('../../middleware')
-const { Users } = require('../../models/mongoose')
+const { Users, Cart } = require('../../models/mongoose')
 
 const bodySchema = joi.object({
   email: joi.string().email().required(),
@@ -22,6 +22,7 @@ async function register (ctx) {
       password: encryptedPassword
     })
     await user.save()
+    await Cart.createNewUserCart(user._id)
     ctx.session.user = pick(user, ['_id', 'email'])
     await ctx.redirect('/')
   } else {
