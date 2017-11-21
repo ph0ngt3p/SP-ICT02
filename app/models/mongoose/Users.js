@@ -24,12 +24,8 @@ async function validatePassword (password) {
   return bcrypt.compare(password, this.password)
 }
 
-userSchema.static({
-  getUserByEmail
-})
-
-userSchema.method({
-  validatePassword
-})
+userSchema
+  .static({ getUserByEmail })
+  .method({ validatePassword })
 
 module.exports = mongoose.model('Users', userSchema, 'Users')
