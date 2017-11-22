@@ -14,16 +14,16 @@ const logout = require('./logoutController')
 
 const routes = new Router()
 
-routes.get('/', home)
-routes.get('/search', search)
-routes.get('/item/:id', viewWearDetails)
-routes.get('/cart/add/:id', editCart.add)
-routes.get('/cart/remove/:id', editCart.remove)
-routes.get('/cart', viewCart)
+routes.get('/', home.get)
+routes.get('/search', search.get)
+routes.get('/item/:id', viewWearDetails.get)
+routes.get('/cart/add/:id', editCart.add.get)
+routes.get('/cart/remove/:id', editCart.remove.get)
+routes.get('/cart', viewCart.get)
 routes.get('/register', register.get)
 routes.post('/register', register.post)
 routes.get('/login', login.get)
 routes.post('/login', login.post)
-routes.get('/logout', logout)
+routes.get('/logout', logout.get)
 
 module.exports = routes

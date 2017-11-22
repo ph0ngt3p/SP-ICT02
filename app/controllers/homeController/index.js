@@ -1,3 +1,7 @@
 'use strict'
 
-module.exports = require('./get')
+const get = require('./get')
+
+module.exports = {
+  get
+}
