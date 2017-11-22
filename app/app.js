@@ -8,9 +8,12 @@ const serve = require('koa-static')
 const views = require('koa-views')
 const session = require('koa-session')
 const nunjucks = require('nunjucks')
+const db = require('./models/mongoose')
 const { parseQuery, saveUserSession } = require('./middleware')
 const controllers = require('./controllers')
 const config = require('./config')
+
+db.connect()
 
 const app = new Koa()
 

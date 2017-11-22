@@ -24,7 +24,13 @@ const { MONGODB_URI, MONGODB_HOST, MONGODB_PORT, MONGODB_PASSWORD, MONGODB_USERN
 
 const config = {
   mongodb: {
-    uri: MONGODB_URI || `mongodb://${(MONGODB_PASSWORD && MONGODB_USERNAME) ? `${MONGODB_USERNAME}:${MONGODB_PASSWORD}` : ''}@${MONGODB_HOST}:${MONGODB_PORT}/${MONGODB_DATABASE}`
+    uri: MONGODB_URI || `mongodb://${(MONGODB_PASSWORD && MONGODB_USERNAME) ? `${MONGODB_USERNAME}:${MONGODB_PASSWORD}` : ''}@${MONGODB_HOST}:${MONGODB_PORT}/${MONGODB_DATABASE}`,
+    promiseLibrary: global.Promise,
+    driverOptions: {
+      useMongoClient: true,
+      w: 1,
+      j: true
+    }
   }
 }
 
